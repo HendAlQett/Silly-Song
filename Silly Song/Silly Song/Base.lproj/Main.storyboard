@@ -28,10 +28,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oPP-Co-d8m">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oPP-Co-d8m">
                                 <rect key="frame" x="180" y="254" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Ph5-ie-1iF"/>
+                                    <constraint firstAttribute="height" constant="128" id="w3w-j6-dNd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -39,18 +42,28 @@
                                 <rect key="frame" x="20" y="186" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mdp-Yh-LRK"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="nG1-BN-BEG"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.21588254824393971" green="0.86710206709044924" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="oPP-Co-d8m" firstAttribute="centerX" secondItem="q6w-k9-ivv" secondAttribute="centerX" id="7DZ-jz-TGv"/>
                             <constraint firstItem="99I-8Y-LzB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="9iK-NE-xB8"/>
                             <constraint firstItem="q6w-k9-ivv" firstAttribute="top" secondItem="99I-8Y-LzB" secondAttribute="bottom" constant="52" id="CbJ-cQ-hcJ"/>
                             <constraint firstItem="99I-8Y-LzB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EoN-0n-toa"/>
+                            <constraint firstItem="oPP-Co-d8m" firstAttribute="top" secondItem="q6w-k9-ivv" secondAttribute="bottom" constant="38" id="JN2-Lr-4bt"/>
                             <constraint firstItem="q6w-k9-ivv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OcQ-1a-Vvm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q6w-k9-ivv" secondAttribute="trailing" id="ZJc-dZ-YSV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="q6w-k9-ivv" secondAttribute="leading" id="xIY-Ox-jKj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="oPP-Co-d8m" id="bxq-1P-oH9"/>
+                        <outlet property="nameField" destination="q6w-k9-ivv" id="1tB-3W-v36"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
