@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var lyricsView: UITextView!
@@ -18,9 +18,14 @@ class ViewController: UIViewController {
         "Banana Fana Fo F<SHORT_NAME>",
         "Me My Mo M<SHORT_NAME>",
         "<FULL_NAME>"].joinWithSeparator( "\n")
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
